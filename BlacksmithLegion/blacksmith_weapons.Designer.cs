@@ -97,6 +97,17 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.statValues1 = new System.Windows.Forms.TextBox();
+            this.statValues2 = new System.Windows.Forms.TextBox();
+            this.statValues3 = new System.Windows.Forms.TextBox();
+            this.statValues4 = new System.Windows.Forms.TextBox();
+            this.statValues5 = new System.Windows.Forms.TextBox();
+            this.statValues6 = new System.Windows.Forms.TextBox();
+            this.statValues7 = new System.Windows.Forms.TextBox();
+            this.statValues8 = new System.Windows.Forms.TextBox();
+            this.statValues9 = new System.Windows.Forms.TextBox();
+            this.statValues10 = new System.Windows.Forms.TextBox();
+            this.iconErr = new System.Windows.Forms.Label();
             this.itemVisualizer.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -174,6 +185,7 @@
             this.objectQuality_textbox.Name = "objectQuality_textbox";
             this.objectQuality_textbox.Size = new System.Drawing.Size(163, 21);
             this.objectQuality_textbox.TabIndex = 7;
+            this.objectQuality_textbox.Text = "Médiocre (Gris)";
             // 
             // label5
             // 
@@ -555,6 +567,16 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.statValues10);
+            this.groupBox1.Controls.Add(this.statValues9);
+            this.groupBox1.Controls.Add(this.statValues8);
+            this.groupBox1.Controls.Add(this.statValues7);
+            this.groupBox1.Controls.Add(this.statValues6);
+            this.groupBox1.Controls.Add(this.statValues5);
+            this.groupBox1.Controls.Add(this.statValues4);
+            this.groupBox1.Controls.Add(this.statValues3);
+            this.groupBox1.Controls.Add(this.statValues2);
+            this.groupBox1.Controls.Add(this.statValues1);
             this.groupBox1.Controls.Add(this.objectStat10_combobox);
             this.groupBox1.Controls.Add(this.objectStat9_combobox);
             this.groupBox1.Controls.Add(this.objectStat8_combobox);
@@ -811,22 +833,7 @@
             // 
             this.objectStat1_combobox.FormattingEnabled = true;
             this.objectStat1_combobox.Items.AddRange(new object[] {
-            "Hache à une main",
-            "Hache à deux mains",
-            "Arc",
-            "Arme à feu",
-            "Masse à une main",
-            "Masse à deux mains",
-            "Arme d\'hast",
-            "Epée à une main",
-            "Epée à deux mains",
-            "Bâton",
-            "Arme de pugilat",
-            "Divers",
-            "Bague",
-            "Arbalète",
-            "Baguette",
-            "Canne à pêche"});
+            "Force"});
             this.objectStat1_combobox.Location = new System.Drawing.Point(53, 27);
             this.objectStat1_combobox.Name = "objectStat1_combobox";
             this.objectStat1_combobox.Size = new System.Drawing.Size(163, 21);
@@ -970,11 +977,92 @@
             this.textBox2.Size = new System.Drawing.Size(85, 20);
             this.textBox2.TabIndex = 43;
             // 
-            // Form1
+            // statValues1
+            // 
+            this.statValues1.Location = new System.Drawing.Point(231, 28);
+            this.statValues1.Name = "statValues1";
+            this.statValues1.Size = new System.Drawing.Size(48, 20);
+            this.statValues1.TabIndex = 44;
+            // 
+            // statValues2
+            // 
+            this.statValues2.Location = new System.Drawing.Point(231, 57);
+            this.statValues2.Name = "statValues2";
+            this.statValues2.Size = new System.Drawing.Size(48, 20);
+            this.statValues2.TabIndex = 48;
+            // 
+            // statValues3
+            // 
+            this.statValues3.Location = new System.Drawing.Point(231, 87);
+            this.statValues3.Name = "statValues3";
+            this.statValues3.Size = new System.Drawing.Size(48, 20);
+            this.statValues3.TabIndex = 49;
+            // 
+            // statValues4
+            // 
+            this.statValues4.Location = new System.Drawing.Point(231, 115);
+            this.statValues4.Name = "statValues4";
+            this.statValues4.Size = new System.Drawing.Size(48, 20);
+            this.statValues4.TabIndex = 50;
+            // 
+            // statValues5
+            // 
+            this.statValues5.Location = new System.Drawing.Point(231, 143);
+            this.statValues5.Name = "statValues5";
+            this.statValues5.Size = new System.Drawing.Size(48, 20);
+            this.statValues5.TabIndex = 51;
+            // 
+            // statValues6
+            // 
+            this.statValues6.Location = new System.Drawing.Point(231, 171);
+            this.statValues6.Name = "statValues6";
+            this.statValues6.Size = new System.Drawing.Size(48, 20);
+            this.statValues6.TabIndex = 52;
+            // 
+            // statValues7
+            // 
+            this.statValues7.Location = new System.Drawing.Point(231, 197);
+            this.statValues7.Name = "statValues7";
+            this.statValues7.Size = new System.Drawing.Size(48, 20);
+            this.statValues7.TabIndex = 53;
+            // 
+            // statValues8
+            // 
+            this.statValues8.Location = new System.Drawing.Point(231, 224);
+            this.statValues8.Name = "statValues8";
+            this.statValues8.Size = new System.Drawing.Size(48, 20);
+            this.statValues8.TabIndex = 54;
+            // 
+            // statValues9
+            // 
+            this.statValues9.Location = new System.Drawing.Point(231, 249);
+            this.statValues9.Name = "statValues9";
+            this.statValues9.Size = new System.Drawing.Size(48, 20);
+            this.statValues9.TabIndex = 55;
+            // 
+            // statValues10
+            // 
+            this.statValues10.Location = new System.Drawing.Point(231, 277);
+            this.statValues10.Name = "statValues10";
+            this.statValues10.Size = new System.Drawing.Size(48, 20);
+            this.statValues10.TabIndex = 56;
+            // 
+            // iconErr
+            // 
+            this.iconErr.AutoSize = true;
+            this.iconErr.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconErr.Location = new System.Drawing.Point(262, 87);
+            this.iconErr.Name = "iconErr";
+            this.iconErr.Size = new System.Drawing.Size(67, 12);
+            this.iconErr.TabIndex = 44;
+            this.iconErr.Text = "Icone invalide !";
+            // 
+            // blacksmith_weapons
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(638, 654);
+            this.Controls.Add(this.iconErr);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pictureBox1);
@@ -1009,7 +1097,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form1";
+            this.Name = "blacksmith_weapons";
             this.Text = "Forge d\'arme";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.itemVisualizer.ResumeLayout(false);
@@ -1093,6 +1181,17 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox statValues10;
+        private System.Windows.Forms.TextBox statValues9;
+        private System.Windows.Forms.TextBox statValues8;
+        private System.Windows.Forms.TextBox statValues7;
+        private System.Windows.Forms.TextBox statValues6;
+        private System.Windows.Forms.TextBox statValues5;
+        private System.Windows.Forms.TextBox statValues4;
+        private System.Windows.Forms.TextBox statValues3;
+        private System.Windows.Forms.TextBox statValues2;
+        private System.Windows.Forms.TextBox statValues1;
+        private System.Windows.Forms.Label iconErr;
     }
 }
 

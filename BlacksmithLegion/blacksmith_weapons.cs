@@ -20,6 +20,7 @@ namespace BlacksmithLegion
         {
 
             InitializeComponent();
+            iconErr.Visible = false;
      
         }
 
@@ -40,14 +41,44 @@ namespace BlacksmithLegion
             objectUsage.ForeColor = Color.White;
             objectType.ForeColor = Color.White;
             objectDescription.ForeColor = ColorTranslator.FromHtml("#ffd100");
-            
+
+            objectName.Font = new Font("Arial", objectName.Font.Size);
+            objectLevel.Font = new Font("Arial", objectName.Font.Size);
+            objectLqe.Font = new Font("Arial", objectName.Font.Size);
+            objectUsage.Font = new Font("Arial", objectName.Font.Size);
+            objectDescription.Font = new Font("Arial", objectName.Font.Size);
+            objectRequiredLvL.Font = new Font("Arial", objectName.Font.Size);
+
 
             //Quality Color
             objectName.Text = objectName_textbox.Text;
+            // GREY
+            if (objectQuality_textbox.SelectedText == "Médiocre (Gris)")
+                objectName.ForeColor = ColorTranslator.FromHtml("#9d9d9d");
+
+            // WHITE
+            if (objectQuality_textbox.SelectedText == "Classique (Blanc)")
+                objectName.ForeColor = ColorTranslator.FromHtml("#ffffff");
+
             // GREEN
             if (objectQuality_textbox.SelectedText == "Bonne (Vert)")
                 objectName.ForeColor = ColorTranslator.FromHtml("#1eff00");
 
+            // BLUE
+            if (objectQuality_textbox.SelectedText == "Rare (Bleu)")
+                objectName.ForeColor = ColorTranslator.FromHtml("#0070dd");
+
+            // PURPLE
+            if (objectQuality_textbox.SelectedText == "Epique (Violet)")
+                objectName.ForeColor = ColorTranslator.FromHtml("#a335ee");
+
+            // ORANGE
+            if (objectQuality_textbox.SelectedText == "Légendaire (orange)")
+                objectName.ForeColor = ColorTranslator.FromHtml("#ff8000");
+
+            // BEIGE
+            if (objectQuality_textbox.SelectedText == "Artéfact (Beige)")
+                objectName.ForeColor = ColorTranslator.FromHtml("#e5cc80");
 
 
             objectLevel.Text = "Niveau d'objet " + objectIlvl_textbox.Text;
@@ -109,7 +140,7 @@ namespace BlacksmithLegion
                 objectDescription.Location = new Point(2, 224);
             }
 
-            Stat1.Text = objectStat1_combobox.Text;
+            Stat1.Text = "+" + statValues1.Text + " " + objectStat1_combobox.Text;
             Stat2.Text = objectStat2_combobox.Text;
             Stat3.Text = objectStat3_combobox.Text;
             Stat4.Text = objectStat4_combobox.Text;
@@ -159,6 +190,7 @@ namespace BlacksmithLegion
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
             backgroundWorker1.RunWorkerAsync();
         }
 
@@ -182,30 +214,5 @@ namespace BlacksmithLegion
 
         }
 
-        /*
-        ItemClass = 2
-
-        Subclass
-        Axe One handed 0
-        Axe Two handed 1
-        Bow 2
-        Gun 3
-        Mace One handed 4
-        Mace Two handed 5
-        Polearm 6
-        Sword One handed 7
-        Sword Two handed 8
-        Obsolete 9
-        Staff 10
-        Exotic 11
-        Exotic 12
-        Fist Weapon 13
-        Miscellaneous (Blacksmith Hammer, Mining Pick, etc.) 14
-        Dagger 15
-        Thrown 16
-        Spear 17
-        Crossbow 18
-        Wand 19
-        */
     }
 }
