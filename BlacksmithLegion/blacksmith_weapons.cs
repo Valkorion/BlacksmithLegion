@@ -10,17 +10,21 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data;
+using MySql.Data.MySqlClient;
+
 
 namespace BlacksmithLegion
 {
     public partial class blacksmith_weapons : Form
     {
+        
 
         public blacksmith_weapons()
         {
 
             InitializeComponent();
-            iconErr.Visible = false;
+         
      
         }
 
@@ -31,16 +35,16 @@ namespace BlacksmithLegion
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-    
+            //ITEM WINDOW VIZUALIZER
 
-            //Panel Color
-            // Main Background
+            // Main
             itemVisualizer.BackColor = ColorTranslator.FromHtml("#071129");
             objectLevel.ForeColor = ColorTranslator.FromHtml("#ffd100");
             objectLqe.ForeColor = Color.White;
             objectUsage.ForeColor = Color.White;
             objectType.ForeColor = Color.White;
             objectDescription.ForeColor = ColorTranslator.FromHtml("#ffd100");
+            
 
             objectName.Font = new Font("Arial", objectName.Font.Size);
             objectLevel.Font = new Font("Arial", objectName.Font.Size);
@@ -80,13 +84,17 @@ namespace BlacksmithLegion
             if (objectQuality_textbox.SelectedText == "Artéfact (Beige)")
                 objectName.ForeColor = ColorTranslator.FromHtml("#e5cc80");
 
+            // LIGHT BLUE
+            if (objectQuality_textbox.SelectedText == "Jeton (Bleu clair)")
+                objectName.ForeColor = ColorTranslator.FromHtml("#00ccff");
+
 
             objectLevel.Text = "Niveau d'objet " + objectIlvl_textbox.Text;
             objectLqe.Text = "Lié quand équipé";
             objectUsage.Text = objectUsage_combobox.Text;
             objectType.Text = objectType_combobox.Text;
-            objectDescription.Text =  objectDescription_richtextbox.Text;
-           
+            objectDescription.Text = "\"" + objectDescription_richtextbox.Text + "\"";
+
 
             if (objectStat1_combobox.SelectedIndex == -1 && objectStat2_combobox.SelectedIndex == -1 && objectStat3_combobox.SelectedIndex == -1 &&
                 objectStat4_combobox.SelectedIndex == -1 && objectStat5_combobox.SelectedIndex == -1 && objectStat6_combobox.SelectedIndex == -1 &&
@@ -113,8 +121,6 @@ namespace BlacksmithLegion
 
                 objectRequiredLvL.Location = new Point(2, 68);
                 objectDescription.Location = new Point(2, 81);
-
-
         
               }
             else
@@ -174,8 +180,9 @@ namespace BlacksmithLegion
                 {
                     if (pictureBox1.Image == pictureBox1.ErrorImage)
                     {
-                        this.objectIcon_textbox.Invoke(new MethodInvoker(delegate () { this.objectIcon_textbox.Text = "Icône invalide !"; }));
-                        this.objectIcon_textbox.Invoke(new MethodInvoker(delegate () { this.objectIcon_textbox.ForeColor = Color.Red; }));
+                        this.iconErr.Invoke(new MethodInvoker(delegate () { this.iconErr.Visible = true; }));
+                        this.iconErr.Invoke(new MethodInvoker(delegate () { this.iconErr.Text = "Icône invalide !"; }));
+                        this.iconErr.Invoke(new MethodInvoker(delegate () { this.iconErr.ForeColor = Color.Red; }));
                     }
                     else
                     {
@@ -213,6 +220,28 @@ namespace BlacksmithLegion
         {
 
         }
+
+        public void MySqlExecute()
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            racesMask raceMask = new racesMask();
+            Dictionary<string, string> rM = raceMask.GetRacesMask();
+
+            int total = 0;
+            foreach (var rMask in listBox1.SelectedItems)
+            {
+                var selection = int.Parse(rM[rMask.ToString()]);
+                total = total + selection;
+                textBox2.Text = total.ToString();
+
+            }
+
+        }
+
 
     }
 }

@@ -71,6 +71,16 @@
             this.objectName = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.statValues10 = new System.Windows.Forms.TextBox();
+            this.statValues9 = new System.Windows.Forms.TextBox();
+            this.statValues8 = new System.Windows.Forms.TextBox();
+            this.statValues7 = new System.Windows.Forms.TextBox();
+            this.statValues6 = new System.Windows.Forms.TextBox();
+            this.statValues5 = new System.Windows.Forms.TextBox();
+            this.statValues4 = new System.Windows.Forms.TextBox();
+            this.statValues3 = new System.Windows.Forms.TextBox();
+            this.statValues2 = new System.Windows.Forms.TextBox();
+            this.statValues1 = new System.Windows.Forms.TextBox();
             this.objectStat10_combobox = new System.Windows.Forms.ComboBox();
             this.objectStat9_combobox = new System.Windows.Forms.ComboBox();
             this.objectStat8_combobox = new System.Windows.Forms.ComboBox();
@@ -97,16 +107,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.statValues1 = new System.Windows.Forms.TextBox();
-            this.statValues2 = new System.Windows.Forms.TextBox();
-            this.statValues3 = new System.Windows.Forms.TextBox();
-            this.statValues4 = new System.Windows.Forms.TextBox();
-            this.statValues5 = new System.Windows.Forms.TextBox();
-            this.statValues6 = new System.Windows.Forms.TextBox();
-            this.statValues7 = new System.Windows.Forms.TextBox();
-            this.statValues8 = new System.Windows.Forms.TextBox();
-            this.statValues9 = new System.Windows.Forms.TextBox();
-            this.statValues10 = new System.Windows.Forms.TextBox();
             this.iconErr = new System.Windows.Forms.Label();
             this.itemVisualizer.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -180,7 +180,8 @@
             "Rare (Bleu)",
             "Epique (Violet)",
             "Légendaire (orange)",
-            "Artéfact (Beige)"});
+            "Artéfact (Beige)",
+            "Jeton (Bleu clair)"});
             this.objectQuality_textbox.Location = new System.Drawing.Point(96, 113);
             this.objectQuality_textbox.Name = "objectQuality_textbox";
             this.objectQuality_textbox.Size = new System.Drawing.Size(163, 21);
@@ -280,8 +281,7 @@
             "Arme à deux mains",
             "Bâton",
             "Dague",
-            "Bouclier",
-            "Dos"});
+            "Bouclier"});
             this.comboBox4.Location = new System.Drawing.Point(96, 382);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(163, 21);
@@ -322,12 +322,17 @@
             "Elfes de Sang",
             "Draeneis",
             "Worgens",
-            "Pandarens"});
+            "Pandarens",
+            "Sacrenuit",
+            "Tauren de Haut-Roc",
+            "Elfe du vide",
+            "Draeneï sancteforge"});
             this.listBox1.Location = new System.Drawing.Point(174, 439);
             this.listBox1.Name = "listBox1";
             this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.listBox1.Size = new System.Drawing.Size(85, 95);
             this.listBox1.TabIndex = 18;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged_1);
             // 
             // listBox2
             // 
@@ -370,7 +375,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 621);
+            this.button1.Location = new System.Drawing.Point(12, 651);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(111, 21);
             this.button1.TabIndex = 23;
@@ -401,7 +406,7 @@
             this.itemVisualizer.ForeColor = System.Drawing.Color.Crimson;
             this.itemVisualizer.Location = new System.Drawing.Point(333, 357);
             this.itemVisualizer.Name = "itemVisualizer";
-            this.itemVisualizer.Size = new System.Drawing.Size(298, 268);
+            this.itemVisualizer.Size = new System.Drawing.Size(298, 324);
             this.itemVisualizer.TabIndex = 40;
             this.itemVisualizer.TabStop = true;
             this.itemVisualizer.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
@@ -409,7 +414,7 @@
             // objectRequiredLvL
             // 
             this.objectRequiredLvL.AutoSize = true;
-            this.objectRequiredLvL.Location = new System.Drawing.Point(2, 211);
+            this.objectRequiredLvL.Location = new System.Drawing.Point(2, 242);
             this.objectRequiredLvL.Name = "objectRequiredLvL";
             this.objectRequiredLvL.Size = new System.Drawing.Size(72, 13);
             this.objectRequiredLvL.TabIndex = 43;
@@ -418,7 +423,7 @@
             // Stat10
             // 
             this.Stat10.AutoSize = true;
-            this.Stat10.Location = new System.Drawing.Point(2, 193);
+            this.Stat10.Location = new System.Drawing.Point(2, 219);
             this.Stat10.Name = "Stat10";
             this.Stat10.Size = new System.Drawing.Size(38, 13);
             this.Stat10.TabIndex = 42;
@@ -427,7 +432,7 @@
             // Stat9
             // 
             this.Stat9.AutoSize = true;
-            this.Stat9.Location = new System.Drawing.Point(2, 180);
+            this.Stat9.Location = new System.Drawing.Point(2, 202);
             this.Stat9.Name = "Stat9";
             this.Stat9.Size = new System.Drawing.Size(32, 13);
             this.Stat9.TabIndex = 41;
@@ -436,7 +441,7 @@
             // Stat8
             // 
             this.Stat8.AutoSize = true;
-            this.Stat8.Location = new System.Drawing.Point(2, 164);
+            this.Stat8.Location = new System.Drawing.Point(2, 185);
             this.Stat8.Name = "Stat8";
             this.Stat8.Size = new System.Drawing.Size(32, 13);
             this.Stat8.TabIndex = 40;
@@ -445,7 +450,7 @@
             // Stat7
             // 
             this.Stat7.AutoSize = true;
-            this.Stat7.Location = new System.Drawing.Point(2, 150);
+            this.Stat7.Location = new System.Drawing.Point(2, 168);
             this.Stat7.Name = "Stat7";
             this.Stat7.Size = new System.Drawing.Size(32, 13);
             this.Stat7.TabIndex = 39;
@@ -454,7 +459,7 @@
             // Stat6
             // 
             this.Stat6.AutoSize = true;
-            this.Stat6.Location = new System.Drawing.Point(2, 135);
+            this.Stat6.Location = new System.Drawing.Point(2, 152);
             this.Stat6.Name = "Stat6";
             this.Stat6.Size = new System.Drawing.Size(32, 13);
             this.Stat6.TabIndex = 38;
@@ -463,7 +468,7 @@
             // Stat5
             // 
             this.Stat5.AutoSize = true;
-            this.Stat5.Location = new System.Drawing.Point(2, 121);
+            this.Stat5.Location = new System.Drawing.Point(2, 136);
             this.Stat5.Name = "Stat5";
             this.Stat5.Size = new System.Drawing.Size(32, 13);
             this.Stat5.TabIndex = 37;
@@ -472,7 +477,7 @@
             // objectDescription
             // 
             this.objectDescription.AutoSize = true;
-            this.objectDescription.Location = new System.Drawing.Point(2, 224);
+            this.objectDescription.Location = new System.Drawing.Point(2, 259);
             this.objectDescription.Name = "objectDescription";
             this.objectDescription.Size = new System.Drawing.Size(60, 13);
             this.objectDescription.TabIndex = 9;
@@ -481,7 +486,7 @@
             // Stat4
             // 
             this.Stat4.AutoSize = true;
-            this.Stat4.Location = new System.Drawing.Point(2, 107);
+            this.Stat4.Location = new System.Drawing.Point(2, 119);
             this.Stat4.Name = "Stat4";
             this.Stat4.Size = new System.Drawing.Size(32, 13);
             this.Stat4.TabIndex = 36;
@@ -490,7 +495,7 @@
             // Stat3
             // 
             this.Stat3.AutoSize = true;
-            this.Stat3.Location = new System.Drawing.Point(2, 94);
+            this.Stat3.Location = new System.Drawing.Point(2, 103);
             this.Stat3.Name = "Stat3";
             this.Stat3.Size = new System.Drawing.Size(32, 13);
             this.Stat3.TabIndex = 35;
@@ -499,7 +504,7 @@
             // Stat2
             // 
             this.Stat2.AutoSize = true;
-            this.Stat2.Location = new System.Drawing.Point(2, 81);
+            this.Stat2.Location = new System.Drawing.Point(2, 87);
             this.Stat2.Name = "Stat2";
             this.Stat2.Size = new System.Drawing.Size(32, 13);
             this.Stat2.TabIndex = 34;
@@ -508,7 +513,7 @@
             // Stat1
             // 
             this.Stat1.AutoSize = true;
-            this.Stat1.Location = new System.Drawing.Point(2, 68);
+            this.Stat1.Location = new System.Drawing.Point(2, 71);
             this.Stat1.Name = "Stat1";
             this.Stat1.Size = new System.Drawing.Size(32, 13);
             this.Stat1.TabIndex = 33;
@@ -603,6 +608,76 @@
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Statistique de l\'arme";
+            // 
+            // statValues10
+            // 
+            this.statValues10.Location = new System.Drawing.Point(231, 277);
+            this.statValues10.Name = "statValues10";
+            this.statValues10.Size = new System.Drawing.Size(48, 20);
+            this.statValues10.TabIndex = 56;
+            // 
+            // statValues9
+            // 
+            this.statValues9.Location = new System.Drawing.Point(231, 249);
+            this.statValues9.Name = "statValues9";
+            this.statValues9.Size = new System.Drawing.Size(48, 20);
+            this.statValues9.TabIndex = 55;
+            // 
+            // statValues8
+            // 
+            this.statValues8.Location = new System.Drawing.Point(231, 224);
+            this.statValues8.Name = "statValues8";
+            this.statValues8.Size = new System.Drawing.Size(48, 20);
+            this.statValues8.TabIndex = 54;
+            // 
+            // statValues7
+            // 
+            this.statValues7.Location = new System.Drawing.Point(231, 197);
+            this.statValues7.Name = "statValues7";
+            this.statValues7.Size = new System.Drawing.Size(48, 20);
+            this.statValues7.TabIndex = 53;
+            // 
+            // statValues6
+            // 
+            this.statValues6.Location = new System.Drawing.Point(231, 171);
+            this.statValues6.Name = "statValues6";
+            this.statValues6.Size = new System.Drawing.Size(48, 20);
+            this.statValues6.TabIndex = 52;
+            // 
+            // statValues5
+            // 
+            this.statValues5.Location = new System.Drawing.Point(231, 143);
+            this.statValues5.Name = "statValues5";
+            this.statValues5.Size = new System.Drawing.Size(48, 20);
+            this.statValues5.TabIndex = 51;
+            // 
+            // statValues4
+            // 
+            this.statValues4.Location = new System.Drawing.Point(231, 115);
+            this.statValues4.Name = "statValues4";
+            this.statValues4.Size = new System.Drawing.Size(48, 20);
+            this.statValues4.TabIndex = 50;
+            // 
+            // statValues3
+            // 
+            this.statValues3.Location = new System.Drawing.Point(231, 87);
+            this.statValues3.Name = "statValues3";
+            this.statValues3.Size = new System.Drawing.Size(48, 20);
+            this.statValues3.TabIndex = 49;
+            // 
+            // statValues2
+            // 
+            this.statValues2.Location = new System.Drawing.Point(231, 57);
+            this.statValues2.Name = "statValues2";
+            this.statValues2.Size = new System.Drawing.Size(48, 20);
+            this.statValues2.TabIndex = 48;
+            // 
+            // statValues1
+            // 
+            this.statValues1.Location = new System.Drawing.Point(231, 28);
+            this.statValues1.Name = "statValues1";
+            this.statValues1.Size = new System.Drawing.Size(48, 20);
+            this.statValues1.TabIndex = 44;
             // 
             // objectStat10_combobox
             // 
@@ -934,9 +1009,9 @@
             this.label22.AutoSize = true;
             this.label22.Location = new System.Drawing.Point(330, 341);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(125, 13);
+            this.label22.Size = new System.Drawing.Size(251, 13);
             this.label22.TabIndex = 37;
-            this.label22.Text = "Prévisualisation de l\'objet";
+            this.label22.Text = "Prévisualisation de l\'objet (race et classe non-inclus)";
             // 
             // objectiLvL
             // 
@@ -956,7 +1031,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(268, 325);
+            this.pictureBox1.Location = new System.Drawing.Point(265, 341);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(62, 62);
             this.pictureBox1.TabIndex = 41;
@@ -977,76 +1052,6 @@
             this.textBox2.Size = new System.Drawing.Size(85, 20);
             this.textBox2.TabIndex = 43;
             // 
-            // statValues1
-            // 
-            this.statValues1.Location = new System.Drawing.Point(231, 28);
-            this.statValues1.Name = "statValues1";
-            this.statValues1.Size = new System.Drawing.Size(48, 20);
-            this.statValues1.TabIndex = 44;
-            // 
-            // statValues2
-            // 
-            this.statValues2.Location = new System.Drawing.Point(231, 57);
-            this.statValues2.Name = "statValues2";
-            this.statValues2.Size = new System.Drawing.Size(48, 20);
-            this.statValues2.TabIndex = 48;
-            // 
-            // statValues3
-            // 
-            this.statValues3.Location = new System.Drawing.Point(231, 87);
-            this.statValues3.Name = "statValues3";
-            this.statValues3.Size = new System.Drawing.Size(48, 20);
-            this.statValues3.TabIndex = 49;
-            // 
-            // statValues4
-            // 
-            this.statValues4.Location = new System.Drawing.Point(231, 115);
-            this.statValues4.Name = "statValues4";
-            this.statValues4.Size = new System.Drawing.Size(48, 20);
-            this.statValues4.TabIndex = 50;
-            // 
-            // statValues5
-            // 
-            this.statValues5.Location = new System.Drawing.Point(231, 143);
-            this.statValues5.Name = "statValues5";
-            this.statValues5.Size = new System.Drawing.Size(48, 20);
-            this.statValues5.TabIndex = 51;
-            // 
-            // statValues6
-            // 
-            this.statValues6.Location = new System.Drawing.Point(231, 171);
-            this.statValues6.Name = "statValues6";
-            this.statValues6.Size = new System.Drawing.Size(48, 20);
-            this.statValues6.TabIndex = 52;
-            // 
-            // statValues7
-            // 
-            this.statValues7.Location = new System.Drawing.Point(231, 197);
-            this.statValues7.Name = "statValues7";
-            this.statValues7.Size = new System.Drawing.Size(48, 20);
-            this.statValues7.TabIndex = 53;
-            // 
-            // statValues8
-            // 
-            this.statValues8.Location = new System.Drawing.Point(231, 224);
-            this.statValues8.Name = "statValues8";
-            this.statValues8.Size = new System.Drawing.Size(48, 20);
-            this.statValues8.TabIndex = 54;
-            // 
-            // statValues9
-            // 
-            this.statValues9.Location = new System.Drawing.Point(231, 249);
-            this.statValues9.Name = "statValues9";
-            this.statValues9.Size = new System.Drawing.Size(48, 20);
-            this.statValues9.TabIndex = 55;
-            // 
-            // statValues10
-            // 
-            this.statValues10.Location = new System.Drawing.Point(231, 277);
-            this.statValues10.Name = "statValues10";
-            this.statValues10.Size = new System.Drawing.Size(48, 20);
-            this.statValues10.TabIndex = 56;
-            // 
             // iconErr
             // 
             this.iconErr.AutoSize = true;
@@ -1056,12 +1061,13 @@
             this.iconErr.Size = new System.Drawing.Size(67, 12);
             this.iconErr.TabIndex = 44;
             this.iconErr.Text = "Icone invalide !";
+            this.iconErr.Visible = false;
             // 
             // blacksmith_weapons
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(638, 654);
+            this.ClientSize = new System.Drawing.Size(649, 684);
             this.Controls.Add(this.iconErr);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
